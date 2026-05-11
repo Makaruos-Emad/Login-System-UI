@@ -22,6 +22,8 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      textAlign: TextAlign.right,
+      textDirection: TextDirection.rtl,
       obscureText: widget.isPassword ? isObscure : false,
       decoration: InputDecoration(
         hintText: widget.hintText,

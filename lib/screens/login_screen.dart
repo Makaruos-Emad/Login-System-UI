@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:login_system/core/theme/app_text_style.dart';
 import 'package:login_system/core/widgets/custom_button.dart';
 import 'package:login_system/core/widgets/custom_text_form_field.dart';
+import 'package:login_system/screens/forget_password_screen.dart';
 import 'package:login_system/screens/register_screen.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -42,7 +43,14 @@ class LoginScreen extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ForgetPasswordScreen(),
+                  ),
+                );
+              },
               child: Text(
                 "نسيت كلمة المرور ؟",
                 style: AppTextStyle.regular16Blue,

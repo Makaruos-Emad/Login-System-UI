@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:login_system/core/theme/app_text_style.dart';
 import 'package:login_system/core/widgets/custom_button.dart';
 import 'package:login_system/core/widgets/custom_text_form_field.dart';
+import 'package:login_system/screens/register_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -54,7 +55,15 @@ class LoginScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const RegisterScreen(),
+                      ),
+                      (route) => false,
+                    );
+                  },
                   child: Text("إنشاء حساب", style: AppTextStyle.regular16Blue),
                 ),
                 const SizedBox(width: 8),

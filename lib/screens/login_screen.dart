@@ -3,6 +3,7 @@ import 'package:login_system/core/theme/app_text_style.dart';
 import 'package:login_system/core/widgets/custom_button.dart';
 import 'package:login_system/core/widgets/custom_text_form_field.dart';
 import 'package:login_system/screens/forget_password_screen.dart';
+import 'package:login_system/screens/profile_screen.dart';
 import 'package:login_system/screens/register_screen.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -57,7 +58,14 @@ class LoginScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 16),
-            CustomButton(text: "تسجيل الدخول"),
+            CustomButton(
+              text: "تسجيل الدخول",
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return const ProfileScreen();
+                }));
+              },
+            ),
             const SizedBox(height: 16),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,

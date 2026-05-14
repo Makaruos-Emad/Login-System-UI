@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:login_system/core/theme/app_text_style.dart';
 import 'package:login_system/core/widgets/custom_button.dart';
 import 'package:login_system/core/widgets/custom_text_form_field.dart';
+import 'package:login_system/screens/code_screen1.dart';
 
 class ForgetPasswordScreen extends StatelessWidget {
   const ForgetPasswordScreen({super.key});
@@ -32,7 +33,15 @@ class ForgetPasswordScreen extends StatelessWidget {
               suffixIcon: Icons.email_outlined,
             ),
             const SizedBox(height: 16),
-            CustomButton(text: "إرسال الكود"),
+            CustomButton(
+              text: "إرسال الكود",
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const CodeScreen()),
+                );
+              },
+            ),
           ],
         ),
       ),

@@ -56,7 +56,7 @@ class RegisterScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 16),
-            CustomButton(text: "إنشاء حساب"),
+            CustomButton(text: "إنشاء حساب", onPressed: () {}),
             const SizedBox(height: 16),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,

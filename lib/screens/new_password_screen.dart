@@ -44,7 +44,7 @@ class NewPasswordScreen extends StatelessWidget {
               isPassword: true,
             ),
             const SizedBox(height: 16),
-            CustomButton(text: "حفظ كلمة المرور"),
+            CustomButton(text: "حفظ كلمة المرور", onPressed: () {}),
           ],
         ),
       ),

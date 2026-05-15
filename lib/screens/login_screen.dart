@@ -61,9 +61,13 @@ class LoginScreen extends StatelessWidget {
             CustomButton(
               text: "تسجيل الدخول",
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return const ProfileScreen();
-                }));
+                Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ProfileScreen(),
+                  ),
+                  (route) => false,
+                );
               },
             ),
             const SizedBox(height: 16),

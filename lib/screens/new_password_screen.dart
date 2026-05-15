@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:login_system/core/theme/app_text_style.dart';
 import 'package:login_system/core/widgets/custom_button.dart';
 import 'package:login_system/core/widgets/custom_text_form_field.dart';
+import 'package:login_system/screens/login_screen.dart';
 
 class NewPasswordScreen extends StatelessWidget {
   const NewPasswordScreen({super.key});
@@ -44,7 +45,16 @@ class NewPasswordScreen extends StatelessWidget {
               isPassword: true,
             ),
             const SizedBox(height: 16),
-            CustomButton(text: "حفظ كلمة المرور", onPressed: () {}),
+            CustomButton(
+              text: "حفظ كلمة المرور",
+              onPressed: () {
+                Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(builder: (context) => const LoginScreen()),
+                  (route) => false,
+                );
+              },
+            ),
           ],
         ),
       ),

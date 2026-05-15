@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:login_system/core/theme/app_text_style.dart';
 import 'package:login_system/core/widgets/custom_button.dart';
 import 'package:login_system/screens/login_screen.dart';
 import 'package:login_system/screens/register_screen.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class StartPage extends StatelessWidget {
   const StartPage({super.key});
@@ -22,40 +22,23 @@ class StartPage extends StatelessWidget {
 
         child: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Text(
-                  "Login System",
-                  style: GoogleFonts.chewy(
-                    color: Colors.white,
-                    fontSize: 32,
-                    fontWeight: FontWeight.bold,
-                    letterSpacing: 2,
-                  ),
-                ),
-                Spacer(flex: 3),
-                Text(
-                  "Welcome",
-                  style: GoogleFonts.chewy(
-                    color: Colors.white,
-                    fontSize: 32,
-                    fontWeight: FontWeight.bold,
-                    letterSpacing: 2,
-                  ),
-                ),
+                Text("Login System", style: AppTextStyle.bold32White),
+                Spacer(),
+                Text("Welcome", style: AppTextStyle.bold32White),
                 const SizedBox(height: 20),
                 CustomButton(
                   text: "تسجيل الدخول",
                   onPressed: () {
-                    Navigator.push(
+                    Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(
-                        builder: (context) {
-                          return const LoginScreen();
-                        },
+                        builder: (context) => const LoginScreen(),
                       ),
+                      (route) => false,
                     );
                   },
                 ),
@@ -64,17 +47,16 @@ class StartPage extends StatelessWidget {
                   text: "انشاء حساب جديد",
                   color: Colors.red,
                   onPressed: () {
-                    Navigator.push(
+                    Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(
-                        builder: (context) {
-                          return const RegisterScreen();
-                        },
+                        builder: (context) => const RegisterScreen(),
                       ),
+                      (route) => false,
                     );
                   },
                 ),
-                Spacer(flex: 1),
+                const SizedBox(height: 40),
               ],
             ),
           ),

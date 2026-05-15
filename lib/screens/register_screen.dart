@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:login_system/core/theme/app_text_style.dart';
 import 'package:login_system/core/widgets/custom_button.dart';
 import 'package:login_system/core/widgets/custom_text_form_field.dart';
+import 'package:login_system/screens/code_screen1.dart';
 import 'package:login_system/screens/login_screen.dart';
 
 class RegisterScreen extends StatelessWidget {
@@ -47,16 +48,16 @@ class RegisterScreen extends StatelessWidget {
               suffixIcon: Icons.lock_outlined,
               isPassword: true,
             ),
-            const SizedBox(height: 8),
-            GestureDetector(
-              onTap: () {},
-              child: Text(
-                "يجب أن تحتوي على 8 أحرف على الأقل",
-                style: AppTextStyle.regular16Grey,
-              ),
-            ),
             const SizedBox(height: 16),
-            CustomButton(text: "إنشاء حساب", onPressed: () {}),
+            CustomButton(
+              text: "إنشاء حساب",
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const CodeScreen()),
+                );
+              },
+            ),
             const SizedBox(height: 16),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,

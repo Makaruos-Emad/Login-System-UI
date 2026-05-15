@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:login_system/core/theme/app_text_style.dart';
 import 'package:login_system/core/widgets/custom_button.dart';
 import 'package:login_system/core/widgets/custom_text_form_field.dart';
-import 'package:login_system/screens/code_screen1.dart';
+import 'package:login_system/screens/code_screen.dart';
 
 class ForgetPasswordScreen extends StatelessWidget {
   const ForgetPasswordScreen({super.key});

@@ -4,20 +4,26 @@ import 'package:login_system/core/widgets/custom_button.dart';
 import 'package:login_system/core/widgets/pin_put.dart';
 import 'package:login_system/screens/new_password_screen.dart';
 
-class BodyEnterCodeScreen extends StatefulWidget {
-  const BodyEnterCodeScreen({super.key});
+class CodeScreen extends StatefulWidget {
+  const CodeScreen({super.key});
 
   @override
-  State<BodyEnterCodeScreen> createState() => _BodyEnterCodeScreenState();
+  State<CodeScreen> createState() => _CodeScreenState();
 }
 
-class _BodyEnterCodeScreenState extends State<BodyEnterCodeScreen> {
-  GlobalKey<FormState> fromKey = GlobalKey();
+class _CodeScreenState extends State<CodeScreen> {
+   GlobalKey<FormState> fromKey = GlobalKey();
   String? otp;
-
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return Scaffold(
+      appBar: AppBar(
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [const Text("أدخل كود الاستعادة")],
+        ),
+      ),
+      body: GestureDetector(
       onTap: () {
         FocusScope.of(context).unfocus();
       },
@@ -70,6 +76,7 @@ class _BodyEnterCodeScreenState extends State<BodyEnterCodeScreen> {
           ),
         ),
       ),
+    ),
     );
   }
 }

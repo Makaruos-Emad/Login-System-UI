@@ -38,7 +38,7 @@ class LoginScreen extends StatelessWidget {
             Text('كلمة المرور', style: AppTextStyle.regular16Grey),
             const SizedBox(height: 8),
             CustomTextFormField(
-              hintText: "••••••••",
+              hintText: "اكتب الرقم السري",
               suffixIcon: Icons.lock_outlined,
               isPassword: true,
             ),

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:login_system/core/theme/app_text_style.dart';
 import 'package:login_system/core/widgets/custom_button.dart';
 import 'package:login_system/core/widgets/pin_put.dart';
+import 'package:login_system/screens/new_password_screen.dart';
 
 class BodyEnterCodeScreen extends StatefulWidget {
   const BodyEnterCodeScreen({super.key});
@@ -20,20 +22,15 @@ class _BodyEnterCodeScreenState extends State<BodyEnterCodeScreen> {
         FocusScope.of(context).unfocus();
       },
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 16),
+        padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Form(
           key: fromKey,
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
             textDirection: TextDirection.ltr,
             children: [
-              Center(
-                child: Text(
-                  "تم ارسال كود التحقق ",
-                  style: TextStyle(fontSize: 16),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              SizedBox(height: 60),
+              Text("تم ارسال كود التحقق ", style: AppTextStyle.regular16Grey),
+              SizedBox(height: 40),
               Directionality(
                 textDirection: TextDirection.ltr,
                 child: CustomPinPut(
@@ -42,25 +39,33 @@ class _BodyEnterCodeScreenState extends State<BodyEnterCodeScreen> {
                   },
                 ),
               ),
-              SizedBox(height: 10),
-
+              SizedBox(height: 20),
               Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  TextButton(
-                    onPressed: () {},
+                  GestureDetector(
+                    onTap: () {},
                     child: Text(
                       "إعادة الإرسال",
-                      style: TextStyle(color: Colors.lightBlue),
+                      style: AppTextStyle.regular16Blue,
                     ),
                   ),
-                  Text("لم يصلك الكود؟"),
+                  Text("لم يصلك الكود؟", style: AppTextStyle.regular16Grey),
                 ],
               ),
-
               SizedBox(height: 40),
-
-              CustomButton(text: "تحقق", onPressed: () {}),
+              CustomButton(
+                text: "تحقق",
+                onPressed: () {
+                  Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const NewPasswordScreen(),
+                    ),
+                    (route) => false,
+                  );
+                },
+              ),
             ],
           ),
         ),

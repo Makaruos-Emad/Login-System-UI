@@ -7,7 +7,12 @@ class CodeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Code Screen"),),
+      appBar: AppBar(
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [const Text("أدخل كود الاستعادة")],
+        ),
+      ),
       body: BodyEnterCodeScreen(),
     );
   }

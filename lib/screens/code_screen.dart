@@ -41,7 +41,9 @@ class _CodeScreenState extends State<CodeScreen> {
                 textDirection: TextDirection.ltr,
                 child: CustomPinPut(
                   onCompleted: (value) {
-                    otp = value;
+                    setState(() {
+                      otp = value;
+                    });
                   },
                 ),
               ),
@@ -63,13 +65,15 @@ class _CodeScreenState extends State<CodeScreen> {
               CustomButton(
                 text: "تحقق",
                 onPressed: () {
-                  Navigator.pushAndRemoveUntil(
+                  if (fromKey.currentState!.validate()) {
+                     Navigator.pushAndRemoveUntil(
                     context,
                     MaterialPageRoute(
                       builder: (context) => const NewPasswordScreen(),
                     ),
                     (route) => false,
                   );
+                  }
                 },
               ),
             ],
